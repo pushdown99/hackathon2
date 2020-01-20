@@ -1,0 +1,43 @@
+{
+    "config": {
+        "sock-type": "TCP",
+        "echo-server-hostname": {
+            "help": "Echo server host name.",
+            "value": "\"echo.mbedcloudtesting.com\""
+        },
+        "echo-server-port": {
+            "help": "Echo server port number.",
+            "value": 7
+        },
+        "trace-level": {
+            "help": "Options are TRACE_LEVEL_ERROR,TRACE_LEVEL_WARN,TRACE_LEVEL_INFO,TRACE_LEVEL_DEBUG",
+            "macro_name": "MBED_TRACE_MAX_LEVEL",
+            "value": "TRACE_LEVEL_INFO"
+        }
+  },
+    "target_overrides": {
+        "*": {
+            "target.network-default-interface-type": "CELLULAR",
+            "mbed-trace.enable": true,
+            "lwip.ipv4-enabled": true,
+            "lwip.ethernet-enabled": false,
+            "lwip.ppp-enabled": false,
+            "lwip.tcp-enabled": true,
+            "platform.stdio-convert-newlines": true,
+            "platform.stdio-baud-rate": 115200,
+            "platform.default-serial-baud-rate": 9600,
+            "platform.stdio-buffered-serial": true,
+            "cellular.debug-at": false,
+            "nsapi.default-cellular-plmn": 0,
+            "nsapi.default-cellular-sim-pin": "\"1234\"",
+            "nsapi.default-cellular-apn": 0,
+            "nsapi.default-cellular-username": 0,
+            "nsapi.default-cellular-password": 0,
+            "mbed-mqtt.max-connections": "5",
+            "mbed-mqtt.max-packet-size": "1024",
+            "SERCOMM_TPB23.tx"               : "D1",
+            "SERCOMM_TPB23.rx"               : "D0",
+            "SERCOMM_TPB23.provide-default"  : true
+        }
+    }
+}
